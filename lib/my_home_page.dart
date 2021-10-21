@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 String avatarSrc= "https://i.pinimg.com/474x/82/ab/35/82ab3533ee71daf256f23c1ccf20ad6f--avatar-maker.jpg";
 String avatarSrc2= "https://cdn.pixabay.com/photo/2021/01/04/10/41/icon-5887126_1280.png";
+String btnText1="Button One";
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
@@ -20,7 +21,15 @@ class _MyHomePageState extends State<MyHomePage> {
         centerTitle: true,
         title: Text("Mariar Alapon"),
       ),
-      body: SingleChildScrollView(
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage("assets/images/image2.jpeg"),
+            fit: BoxFit.cover,
+            colorFilter: ColorFilter
+                .mode(Colors.black12.withOpacity(0.4), BlendMode.dstATop)
+          )
+        ),
         child: Column(
           children: [
             Row(
@@ -138,6 +147,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ],
             ),
+            ElevatedButton(
+                onPressed: (){
+                  setState(() {
+                    btnText1="Button Pressed";
+                  });
+                },
+                child: Text(btnText1)
+            )
           ],
         ),
       )
