@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:slide_drawer/slide_drawer.dart';
 String avatarSrc= "https://i.pinimg.com/474x/82/ab/35/82ab3533ee71daf256f23c1ccf20ad6f--avatar-maker.jpg";
 String avatarSrc2= "https://cdn.pixabay.com/photo/2021/01/04/10/41/icon-5887126_1280.png";
 String btnText1="Button One";
@@ -20,6 +21,10 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Colors.purple,
         centerTitle: true,
         title: Text("Mariar Alapon"),
+        leading: IconButton(
+            onPressed: () => SlideDrawer.of(context)!.toggle(),
+            icon: Icon(Icons.menu_outlined)
+        ),
       ),
       body: Container(
         decoration: BoxDecoration(
