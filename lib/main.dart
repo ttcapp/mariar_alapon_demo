@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:maria_demo/my_home_page.dart';
 import 'package:maria_demo/second_page.dart';
+import 'package:maria_demo/third_page.dart';
 import 'package:slide_drawer/slide_drawer.dart';
 void main() {
   runApp( MyApp());
@@ -32,7 +33,11 @@ class MyApp extends StatelessWidget {
            );
               },
               icon: Icons.visibility),
-          MenuItem('Favourite', onTap: (){},
+          MenuItem('Third Page', onTap: (){
+            navigatorKey.currentState!.push(
+                MaterialPageRoute(builder: (context)=>ThirdPage())
+            );
+          },
               icon: Icons.ac_unit),
           MenuItem('Profile', onTap: (){},
               icon: Icons.account_circle_rounded),
